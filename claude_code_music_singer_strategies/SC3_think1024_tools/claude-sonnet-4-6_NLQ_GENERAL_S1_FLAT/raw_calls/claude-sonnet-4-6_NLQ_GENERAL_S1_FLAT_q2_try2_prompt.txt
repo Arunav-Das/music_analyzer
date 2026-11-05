@@ -1,3 +1,7 @@
+[SYSTEM]
+You are a helpful assistant. Answer the user's message directly in plain text.
+
+[USER]
 You are a music history research assistant with comprehensive knowledge of Grammy Award and Brit Award records, singer discographies, and international biographical reference data. You reason carefully and only state facts you can verify.
 
 [Query ID: 2]  [Strategy: flat_conjunctive]

@@ -1,0 +1,57 @@
+====================================================================================================
+MUSIC SINGER ANALYSER (CLAUDE CODE) - ANALYSIS REPORT
+generated 2026-11-05T01:26:27  (script version 2026-11-04.1-music-claude-code)
+====================================================================================================
+
+1. SCOPE
+  records=2  models=1  strategies=1  rag_tiers=1  system modes=['neutral']
+  Backend: `claude -p` in a Claude Code cloud session; temperature / top_p not controllable; tools disabled; raw events per call in <cell dir>/raw_calls.
+  Ground-truth scoring: OFF
+
+2. HEADLINE (all records pooled)
+  records                   2
+  error_rate                1.0000
+  truncated_rate            0.0000
+  empty_rate                0.0000
+  degenerate_rate           0.0000
+  no_result_rate            0.0000
+  mean_singers              0.0000
+  year_accuracy             nan
+  pop_numeric_rate          nan
+  gt_scored                 0
+  gt_precision              nan
+  gt_recall                 nan
+  gt_f1                     nan
+  gt_birthplace_acc         nan
+  gt_pop_within_5pct        nan
+  mean_latency_s            0.0000
+  mean_completion_tokens    nan
+  mean_text_chars           nan
+  mean_thinking_chars       nan
+  total_cost_usd            0.0000
+
+3. BY MODEL
+      model_alias  records  error_rate  truncated_rate  empty_rate  degenerate_rate  no_result_rate  mean_singers  year_accuracy  pop_numeric_rate  gt_scored  gt_precision  gt_recall  gt_f1  gt_birthplace_acc  gt_pop_within_5pct  mean_latency_s  mean_completion_tokens  mean_text_chars  mean_thinking_chars  total_cost_usd
+claude-sonnet-4-6        2       1.000           0.000       0.000            0.000           0.000         0.000            NaN               NaN          0           NaN        NaN    NaN                NaN                 NaN           0.000                     NaN              NaN                  NaN           0.000
+
+4. BY STRATEGY
+        strategy  records  error_rate  truncated_rate  empty_rate  degenerate_rate  no_result_rate  mean_singers  year_accuracy  pop_numeric_rate  gt_scored  gt_precision  gt_recall  gt_f1  gt_birthplace_acc  gt_pop_within_5pct  mean_latency_s  mean_completion_tokens  mean_text_chars  mean_thinking_chars  total_cost_usd code
+flat_conjunctive        2       1.000           0.000       0.000            0.000           0.000         0.000            NaN               NaN          0           NaN        NaN    NaN                NaN                 NaN           0.000                     NaN              NaN                  NaN           0.000   S1
+
+5. BY RAG TIER
+   rag_tier  records  error_rate  truncated_rate  empty_rate  degenerate_rate  no_result_rate  mean_singers  year_accuracy  pop_numeric_rate  gt_scored  gt_precision  gt_recall  gt_f1  gt_birthplace_acc  gt_pop_within_5pct  mean_latency_s  mean_completion_tokens  mean_text_chars  mean_thinking_chars  total_cost_usd
+no_evidence        2       1.000           0.000       0.000            0.000           0.000         0.000            NaN               NaN          0           NaN        NaN    NaN                NaN                 NaN           0.000                     NaN              NaN                  NaN           0.000
+
+6. GENERATION HEALTH
+      model_alias system_mode status  count
+claude-sonnet-4-6     neutral  error      2
+
+8. KEY INSIGHTS
+
+9. LIMITATIONS
+  - One call per (model, strategy, RAG tier, song): small differences may be sampling noise (no replicates).
+  - Singer matching uses normalised names with token-subset tolerance; a shared surname can merge two singers.
+  - Sampling parameters cannot be set through `claude -p`; a call that hits the cap is stored truncated, not retried.
+  - system_mode neutral vs default changes the system prompt; do not pool them when comparing models.
+
+FILES: (no plots written)

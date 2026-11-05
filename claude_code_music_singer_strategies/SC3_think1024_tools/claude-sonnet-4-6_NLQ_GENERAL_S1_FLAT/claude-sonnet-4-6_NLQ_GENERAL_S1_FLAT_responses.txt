@@ -1,2 +1,5 @@
 ===== Query_ID 1 | The Things That I Used to Do =====
 ERROR: claude -p failed after 3 attempts. Last error:  . Raw logs: claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/raw_calls
+
+===== Query_ID 2 | Enchanted (The Platters song) =====
+ERROR: claude -p failed after 3 attempts. Last error:  . Raw logs: claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/raw_calls
