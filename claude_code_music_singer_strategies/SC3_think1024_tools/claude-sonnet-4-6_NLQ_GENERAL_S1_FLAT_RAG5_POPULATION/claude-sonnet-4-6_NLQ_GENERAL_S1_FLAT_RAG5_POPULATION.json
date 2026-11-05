@@ -1,0 +1,394 @@
+{
+  "metadata": {
+    "script_version": "2026-11-04.1-music-claude-code",
+    "domain": "music",
+    "model_alias": "claude-sonnet-4-6",
+    "model_name": "claude-sonnet-4-6",
+    "model_family": "claude",
+    "model_size": "sonnet-4-6",
+    "inference_backend": "claude_code_cli_cloud_session",
+    "query_mode": "nlq_general",
+    "strategy": "flat_conjunctive",
+    "strategy_suffix": "S1_FLAT",
+    "rag_tier": "full_with_population",
+    "rag_tier_description": "All ground-truth records including population (GROUND_TRUTH_FILE) - reading comprehension + multi-hop synthesis.",
+    "rag_max_rows": "all records",
+    "rag_distractor_max_rows": 10,
+    "output_suffix": "NLQ_GENERAL_S1_FLAT_RAG5_POPULATION",
+    "source_column": "Song_Title",
+    "timestamp": "2026-11-05T01:38:42.672867",
+    "total_queries": 2,
+    "successful_records": 2,
+    "error_records": 0,
+    "max_output_tokens_requested": 3000,
+    "max_thinking_tokens_env": 1024,
+    "tools": "WebSearch,WebFetch",
+    "max_turns": 15,
+    "params_adapted": [],
+    "request_timeout_s": 600,
+    "system_mode_requested": "neutral",
+    "system_mode": "native",
+    "system_text": "You are a helpful assistant. Answer the user's message directly in plain text.",
+    "sampling_note": "temperature / top_p / top_k are not controllable through `claude -p`; CLI defaults apply",
+    "claude_code_call": "claude -p --model <id> --output-format stream-json --verbose --include-partial-messages --tools '' --max-turns 1 [--system-prompt <neutral text>]; cwd = empty temp dir; output cap via CLAUDE_CODE_MAX_OUTPUT_TOKENS; raw events in <cell dir>/raw_calls",
+    "prompt_builder": "strategy_scaffolded_v1",
+    "response_text_policy": "Generated_Response is the model text as returned; never altered",
+    "prize_criteria": [
+      "Grammy Award",
+      "Brit Award"
+    ],
+    "rag_enabled": true,
+    "reference_file": "dbpedia_gt_music_verification.csv",
+    "ground_truth_file": "dbpedia_gt_music.csv",
+    "input_file": "real_songs_50.csv",
+    "population_handling": "GT values parsed with float() first; model answers with unit-aware parser",
+    "latent_note": "Claude Code returns no per-token logprobs; latent fields are zeros",
+    "rag_tiers_available": {
+      "no_evidence": "No evidence - knowledge retrieval / reasoning from parametric memory.",
+      "year_list_only": "All co-year song titles (REFERENCE_FILE) - candidate identification + knowledge retrieval.",
+      "titles_authors": "All co-year songs + singers (REFERENCE_FILE) - entity linking + further knowledge retrieval.",
+      "titles_authors_prize": "All co-year songs + singers + prize (REFERENCE_FILE) - filtering + further retrieval.",
+      "full_with_birthplace": "All candidate singers + birthplace, no population (GROUND_TRUTH_FILE) - multi-hop comprehension + population retrieval.",
+      "full_with_population": "All ground-truth records including population (GROUND_TRUTH_FILE) - reading comprehension + multi-hop synthesis.",
+      "full_with_distractors": "All ground-truth records + distractors (GROUND_TRUTH_FILE) - comprehension + relevance filtering + synthesis."
+    }
+  },
+  "results": [
+    {
+      "Query_ID": 1,
+      "Song_Title": "The Things That I Used to Do",
+      "Song_ID": "MUS-0001",
+      "mode": "nlq_general",
+      "strategy": "flat_conjunctive",
+      "rag_tier": "full_with_population",
+      "system_mode": "native",
+      "system_mode_requested": "neutral",
+      "prompt_sent": "You are a music history research assistant with comprehensive knowledge of Grammy Award and Brit Award records, singer discographies, and international biographical reference data. You reason carefully and only state facts you can verify.\n\n[Query ID: 1]  [Strategy: flat_conjunctive]\n\nTask (Strategy 1 - flat conjunctive)\n--------------------------------------\nTarget song: \"The Things That I Used to Do\"\n\nRETRIEVED EVIDENCE (Song_ID=MUS-0001, release year = 1953)\n------------------------------------------------------------\nComplete evidence including population - all 10 ground-truth records for this song's year:\n  - [Grammy] Andy_Griffith | birthplace=unknown | population=unknown\n  - [Grammy] Gordon_Jenkins | birthplace=Webster Groves, Missouri | population=24010\n  - [Grammy] Hank_Williams | birthplace=Alabama | population=unknown\n  - [Grammy] Hank_Williams | birthplace=Butler County, Alabama | population=unknown\n  - [Grammy] Jo_Stafford | birthplace=Coalinga, California | population=17590\n  - [Grammy] Marty_Robbins | birthplace=Glendale, Arizona | population=248325\n  - [Grammy] Perry_Como | birthplace=Canonsburg, Pennsylvania | population=9744\n  - [Grammy] Professor_Longhair | birthplace=Bogalusa, Louisiana | population=10659\n  - [Grammy] Ray_Charles | birthplace=Albany, Georgia | population=68089\n  - [Grammy] Tony_Bennett | birthplace=unknown | population=unknown\n------------------------------------------------------------\nUse the evidence above only where it is directly relevant to THIS song's Song_ID and year. Do not use distractor or mismatched-year rows as qualifying. Where evidence is silent or marked unknown/NO RESULT, rely on your own verified knowledge rather than inventing a fact.\n\nFind every singer who (a) has EVER won a Grammy Award or a Brit Award, AND (b) released at least one song in the same calendar year as \"The Things That I Used to Do\". For each matching singer state their birthplace and the population of that birthplace.\n\nNote: The award-winning recording and the co-year song are typically different works. Condition (b) does not require an award-winning song - any song released by that singer in that year qualifies.\nDo not invent or estimate any fact.\n\nReasoning approach: Apply all conditions simultaneously in a single pass.\n\nOutput format\n-------------\nStart your answer with the line:\n  ANSWER:\nOn the very next line write:\n  Release year: [YYYY]\nThen list one line per matching singer in this exact format:\n  [Singer Name] | [Birthplace] | [Population]\nWhere:\n  Singer Name    = the singer's full name in English\n  Birthplace     = the city or place of birth in English (write \"unknown\" if not found)\n  Population     = the population of that place as a number (write \"unknown\" if not found)\nIf no singers match the criteria, write:\n  No matching singers found.\nDo not include any other text after the ANSWER: section.\nDo not invent or estimate facts. Omit any singer you cannot verify.\n\nANSWER:",
+      "rag_evidence_injected": true,
+      "rag_resolved_year": "1953",
+      "rag_rows_available": 10,
+      "rag_rows_injected": 10,
+      "rag_rows_year_mismatch": 0,
+      "rag_rows_error": 0,
+      "rag_truncated": false,
+      "rag_evidence_complete": true,
+      "rag_pop_check_failures": 0,
+      "est_prompt_tokens": 739,
+      "model_alias": "claude-sonnet-4-6",
+      "model_id": "claude-sonnet-4-6",
+      "model_family": "claude",
+      "Generated_Response": "API Error: Claude's response exceeded the 3000 output token maximum. To configure this behavior, set the CLAUDE_CODE_MAX_OUTPUT_TOKENS environment variable.",
+      "Parse_Text_Altered": false,
+      "Degenerate_Flag": false,
+      "Degenerate_Reason": "",
+      "Parsed_Rows": [
+        {
+          "ReleaseYear": "",
+          "Singer": "NO RESULT",
+          "Birthplace": "",
+          "PopCount": ""
+        }
+      ],
+      "ReleaseYear_Parsed": "",
+      "Singer_Parsed": "NO RESULT",
+      "Birthplace_Parsed": "",
+      "PopCount_Parsed": "",
+      "generation_status": "truncated_length",
+      "finish_reason": "output_token_cap",
+      "max_tokens_sent": 3000,
+      "usage": {
+        "input_tokens": 23,
+        "cache_creation_input_tokens": 21712,
+        "cache_read_input_tokens": 70864,
+        "output_tokens": 23585,
+        "output_tokens_details": {
+          "thinking_tokens": 22994
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 21712,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 3,
+            "output_tokens": 3000,
+            "cache_read_input_tokens": 16652,
+            "cache_creation_input_tokens": 125,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 125
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "cost_usd_reported": 0.6333558000000001,
+      "thinking_chars": 0,
+      "text_chars": 156,
+      "raw_files": [
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q1_try1_prompt.txt",
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q1_try1_events.jsonl",
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q1_try1_text.txt",
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q1_try1_stderr.txt"
+      ],
+      "generation_time_seconds": 354.497,
+      "processing_timestamp": "2026-11-05T01:38:12.898911",
+      "prompt_builder": "strategy_scaffolded_v1",
+      "attention_mean": 0.0,
+      "attention_min": 0.0,
+      "attention_max": 0.0,
+      "attention_std": 0.0,
+      "attention_entropy": 0.0,
+      "hidden_state_norm_mean": 0.0,
+      "hidden_state_norm_min": 0.0,
+      "hidden_state_norm_max": 0.0,
+      "hidden_state_norm_std": 0.0,
+      "token_prob_mean": 0.0,
+      "token_prob_min": 0.0,
+      "token_prob_max": 0.0,
+      "token_prob_p10": 0.0,
+      "token_prob_p90": 0.0,
+      "confidence_score": 0.0,
+      "perplexity_estimate": 0.0
+    },
+    {
+      "Query_ID": 2,
+      "Song_Title": "Enchanted (The Platters song)",
+      "Song_ID": "MUS-0002",
+      "mode": "nlq_general",
+      "strategy": "flat_conjunctive",
+      "rag_tier": "full_with_population",
+      "system_mode": "native",
+      "system_mode_requested": "neutral",
+      "prompt_sent": "You are a music history research assistant with comprehensive knowledge of Grammy Award and Brit Award records, singer discographies, and international biographical reference data. You reason carefully and only state facts you can verify.\n\n[Query ID: 2]  [Strategy: flat_conjunctive]\n\nTask (Strategy 1 - flat conjunctive)\n--------------------------------------\nTarget song: \"Enchanted (The Platters song)\"\n\nRETRIEVED EVIDENCE (Song_ID=MUS-0002, release year = 1959)\n------------------------------------------------------------\nComplete evidence including population - all 28 ground-truth records for this song's year:\n  - [Grammy] Barrett_Strong | birthplace=West Point, Mississippi | population=10105\n  - [Grammy] Chubby_Checker | birthplace=Spring Gully, South Carolina | population=unknown\n  - [Grammy] Conway_Twitty | birthplace=Friars Point, Mississippi | population=896\n  - [Grammy] Dinah_Washington | birthplace=Tuscaloosa, Alabama | population=99600\n  - [Grammy] Domenico_Modugno | birthplace=Polignano a Mare | population=17491\n  - [Grammy] Domenico_Modugno | birthplace=Kingdom of Italy | population=unknown\n  - [Grammy] Duane_Eddy | birthplace=Corning, New York | population=10551\n  - [Grammy] Frank_Sinatra | birthplace=Hoboken, New Jersey | population=60419\n  - [Grammy] Ike_Turner | birthplace=Clarksdale, Mississippi | population=14903\n  - [Grammy] James_Brown | birthplace=Barnwell, South Carolina | population=4652\n  - [Grammy] Jerry_Lee_Lewis | birthplace=Ferriday, Louisiana | population=3189\n  - [Grammy] Johnny_Horton | birthplace=Los Angeles | population=3898747\n  - [Grammy] Johnny_Horton | birthplace=California | population=unknown\n  - [Grammy] João_Gilberto | birthplace=Juazeiro | population=218162\n  - [Grammy] João_Gilberto | birthplace=Bahia | population=14141626\n  - [Grammy] Marty_Robbins | birthplace=Glendale, Arizona | population=248325\n  - [Grammy] Miles_Davis | birthplace=Alton, Illinois | population=25676\n  - [Grammy] Otis_Rush | birthplace=Philadelphia, Mississippi | population=7118\n  - [Grammy] Percy_Faith | birthplace=Toronto | population=2794356\n  - [Grammy] Percy_Faith | birthplace=Ontario | population=unknown\n  - [Grammy] Ray_Price_(singer) | birthplace=Wood County, Texas | population=unknown\n  - [Grammy] Ricky_Nelson | birthplace=Teaneck, New Jersey | population=41246\n  - [Grammy] Sarah_Vaughan | birthplace=Newark, New Jersey | population=311549\n  - [Grammy] Steve_Lawrence | birthplace=New York City | population=8804190\n  - [Grammy] Willie_Nelson | birthplace=Abbott, Texas | population=352\n  - [Brit] Cliff_Richard | birthplace=Lucknow | population=4000000\n  - [Brit] Cliff_Richard | birthplace=British Raj | population=unknown\n  - [Brit] Cliff_Richard | birthplace=United Provinces (1937–1950) | population=unknown\n------------------------------------------------------------\nUse the evidence above only where it is directly relevant to THIS song's Song_ID and year. Do not use distractor or mismatched-year rows as qualifying. Where evidence is silent or marked unknown/NO RESULT, rely on your own verified knowledge rather than inventing a fact.\n\nFind every singer who (a) has EVER won a Grammy Award or a Brit Award, AND (b) released at least one song in the same calendar year as \"Enchanted (The Platters song)\". For each matching singer state their birthplace and the population of that birthplace.\n\nNote: The award-winning recording and the co-year song are typically different works. Condition (b) does not require an award-winning song - any song released by that singer in that year qualifies.\nDo not invent or estimate any fact.\n\nReasoning approach: Apply all conditions simultaneously in a single pass.\n\nOutput format\n-------------\nStart your answer with the line:\n  ANSWER:\nOn the very next line write:\n  Release year: [YYYY]\nThen list one line per matching singer in this exact format:\n  [Singer Name] | [Birthplace] | [Population]\nWhere:\n  Singer Name    = the singer's full name in English\n  Birthplace     = the city or place of birth in English (write \"unknown\" if not found)\n  Population     = the population of that place as a number (write \"unknown\" if not found)\nIf no singers match the criteria, write:\n  No matching singers found.\nDo not include any other text after the ANSWER: section.\nDo not invent or estimate facts. Omit any singer you cannot verify.\n\nANSWER:",
+      "rag_evidence_injected": true,
+      "rag_resolved_year": "1959",
+      "rag_rows_available": 28,
+      "rag_rows_injected": 28,
+      "rag_rows_year_mismatch": 0,
+      "rag_rows_error": 0,
+      "rag_truncated": false,
+      "rag_evidence_complete": true,
+      "rag_pop_check_failures": 0,
+      "est_prompt_tokens": 1086,
+      "model_alias": "claude-sonnet-4-6",
+      "model_id": "claude-sonnet-4-6",
+      "model_family": "claude",
+      "Generated_Response": "ANSWER:\nRelease year: 1959\nBarrett Strong | West Point, Mississippi | 10105\nChubby Checker | Spring Gully, South Carolina | unknown\nConway Twitty | Friars Point, Mississippi | 896\nDinah Washington | Tuscaloosa, Alabama | 99600\nDomenico Modugno | Polignano a Mare | 17491\nDuane Eddy | Corning, New York | 10551\nFrank Sinatra | Hoboken, New Jersey | 60419\nIke Turner | Clarksdale, Mississippi | 14903\nJames Brown | Barnwell, South Carolina | 4652\nJerry Lee Lewis | Ferriday, Louisiana | 3189\nJohnny Horton | Los Angeles | 3898747\nJoão Gilberto | Juazeiro | 218162\nMarty Robbins | Glendale, Arizona | 248325\nMiles Davis | Alton, Illinois | 25676\nOtis Rush | Philadelphia, Mississippi | 7118\nPercy Faith | Toronto | 2794356\nRay Price | Wood County, Texas | unknown\nRicky Nelson | Teaneck, New Jersey | 41246\nSarah Vaughan | Newark, New Jersey | 311549\nSteve Lawrence | New York City | 8804190\nWillie Nelson | Abbott, Texas | 352\nCliff Richard | Lucknow | 4000000",
+      "Parse_Text_Altered": false,
+      "Degenerate_Flag": false,
+      "Degenerate_Reason": "",
+      "Parsed_Rows": [
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Barrett Strong",
+          "Birthplace": "West Point, Mississippi",
+          "PopCount": "10105"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Chubby Checker",
+          "Birthplace": "Spring Gully, South Carolina",
+          "PopCount": "unknown"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Conway Twitty",
+          "Birthplace": "Friars Point, Mississippi",
+          "PopCount": "896"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Dinah Washington",
+          "Birthplace": "Tuscaloosa, Alabama",
+          "PopCount": "99600"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Domenico Modugno",
+          "Birthplace": "Polignano a Mare",
+          "PopCount": "17491"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Duane Eddy",
+          "Birthplace": "Corning, New York",
+          "PopCount": "10551"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Frank Sinatra",
+          "Birthplace": "Hoboken, New Jersey",
+          "PopCount": "60419"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Ike Turner",
+          "Birthplace": "Clarksdale, Mississippi",
+          "PopCount": "14903"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "James Brown",
+          "Birthplace": "Barnwell, South Carolina",
+          "PopCount": "4652"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Jerry Lee Lewis",
+          "Birthplace": "Ferriday, Louisiana",
+          "PopCount": "3189"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Johnny Horton",
+          "Birthplace": "Los Angeles",
+          "PopCount": "3898747"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "João Gilberto",
+          "Birthplace": "Juazeiro",
+          "PopCount": "218162"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Marty Robbins",
+          "Birthplace": "Glendale, Arizona",
+          "PopCount": "248325"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Miles Davis",
+          "Birthplace": "Alton, Illinois",
+          "PopCount": "25676"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Otis Rush",
+          "Birthplace": "Philadelphia, Mississippi",
+          "PopCount": "7118"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Percy Faith",
+          "Birthplace": "Toronto",
+          "PopCount": "2794356"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Ray Price",
+          "Birthplace": "Wood County, Texas",
+          "PopCount": "unknown"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Ricky Nelson",
+          "Birthplace": "Teaneck, New Jersey",
+          "PopCount": "41246"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Sarah Vaughan",
+          "Birthplace": "Newark, New Jersey",
+          "PopCount": "311549"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Steve Lawrence",
+          "Birthplace": "New York City",
+          "PopCount": "8804190"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Willie Nelson",
+          "Birthplace": "Abbott, Texas",
+          "PopCount": "352"
+        },
+        {
+          "ReleaseYear": "1959",
+          "Singer": "Cliff Richard",
+          "Birthplace": "Lucknow",
+          "PopCount": "4000000"
+        }
+      ],
+      "ReleaseYear_Parsed": "1959",
+      "Singer_Parsed": "Barrett Strong; Chubby Checker; Conway Twitty; Dinah Washington; Domenico Modugno; Duane Eddy; Frank Sinatra; Ike Turner; James Brown; Jerry Lee Lewis; Johnny Horton; João Gilberto; Marty Robbins; Miles Davis; Otis Rush; Percy Faith; Ray Price; Ricky Nelson; Sarah Vaughan; Steve Lawrence; Willie Nelson; Cliff Richard",
+      "Birthplace_Parsed": "West Point, Mississippi; Spring Gully, South Carolina; Friars Point, Mississippi; Tuscaloosa, Alabama; Polignano a Mare; Corning, New York; Hoboken, New Jersey; Clarksdale, Mississippi; Barnwell, South Carolina; Ferriday, Louisiana; Los Angeles; Juazeiro; Glendale, Arizona; Alton, Illinois; Philadelphia, Mississippi; Toronto; Wood County, Texas; Teaneck, New Jersey; Newark, New Jersey; New York City; Abbott, Texas; Lucknow",
+      "PopCount_Parsed": "10105; unknown; 896; 99600; 17491; 10551; 60419; 14903; 4652; 3189; 3898747; 218162; 248325; 25676; 7118; 2794356; unknown; 41246; 311549; 8804190; 352; 4000000",
+      "generation_status": "ok",
+      "finish_reason": "end_turn",
+      "max_tokens_sent": 3000,
+      "usage": {
+        "input_tokens": 3,
+        "cache_creation_input_tokens": 2513,
+        "cache_read_input_tokens": 1495,
+        "output_tokens": 2396,
+        "output_tokens_details": {
+          "thinking_tokens": 2063
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2513,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 3,
+            "output_tokens": 2396,
+            "cache_read_input_tokens": 1495,
+            "cache_creation_input_tokens": 2513,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2513
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "cost_usd_reported": 0.0514755,
+      "thinking_chars": 0,
+      "text_chars": 958,
+      "raw_files": [
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q2_try1_prompt.txt",
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q2_try1_events.jsonl",
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q2_try1_text.txt",
+        "claude_code_music_singer_strategies/SC3_think1024_tools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG5_POPULATION_q2_try1_stderr.txt"
+      ],
+      "generation_time_seconds": 29.769,
+      "processing_timestamp": "2026-11-05T01:38:42.671844",
+      "prompt_builder": "strategy_scaffolded_v1",
+      "attention_mean": 0.0,
+      "attention_min": 0.0,
+      "attention_max": 0.0,
+      "attention_std": 0.0,
+      "attention_entropy": 0.0,
+      "hidden_state_norm_mean": 0.0,
+      "hidden_state_norm_min": 0.0,
+      "hidden_state_norm_max": 0.0,
+      "hidden_state_norm_std": 0.0,
+      "token_prob_mean": 0.0,
+      "token_prob_min": 0.0,
+      "token_prob_max": 0.0,
+      "token_prob_p10": 0.0,
+      "token_prob_p90": 0.0,
+      "confidence_score": 0.0,
+      "perplexity_estimate": 0.0
+    }
+  ]
+}

@@ -3,3 +3,5 @@ claude-sonnet-4-6,flat_conjunctive,no_evidence,neutral,1,MUS-0001,error,True,Fal
 claude-sonnet-4-6,flat_conjunctive,no_evidence,neutral,2,MUS-0002,error,True,False,False,False,0.0,,,,,,1959,,0,False,0,0,0,0,False,0,0,0,0
 claude-sonnet-4-6,flat_conjunctive,full_with_birthplace,neutral,1,MUS-0001,truncated_length,False,True,False,False,132.839,6557.0,1541.0,0.0,0.4835446000000001,1953,1953,True,9,False,8,9,9,9,True,6,9,6,6
 claude-sonnet-4-6,flat_conjunctive,full_with_birthplace,neutral,2,MUS-0002,truncated_length,False,True,False,False,207.7,12531.0,3478.0,0.0,0.8764161,1959,1959,True,22,False,21,22,22,22,True,22,22,19,20
+claude-sonnet-4-6,flat_conjunctive,full_with_population,neutral,1,MUS-0001,truncated_length,False,True,False,False,354.497,23585.0,156.0,0.0,0.6333558000000001,,1953,,0,True,0,0,0,9,True,0,0,0,0
+claude-sonnet-4-6,flat_conjunctive,full_with_population,neutral,2,MUS-0002,ok,False,False,False,False,29.769,2396.0,958.0,0.0,0.0514755,1959,1959,True,22,False,20,22,22,22,True,22,22,20,20
