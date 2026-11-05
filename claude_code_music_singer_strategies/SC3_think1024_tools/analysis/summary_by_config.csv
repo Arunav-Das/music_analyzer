@@ -1,2 +1,3 @@
 ﻿model_alias,strategy,rag_tier,system_mode,records,error_rate,truncated_rate,empty_rate,degenerate_rate,no_result_rate,mean_singers,year_accuracy,pop_numeric_rate,gt_scored,gt_precision,gt_recall,gt_f1,gt_birthplace_acc,gt_pop_within_5pct,mean_latency_s,mean_completion_tokens,mean_text_chars,mean_thinking_chars,total_cost_usd
+claude-sonnet-4-6,flat_conjunctive,full_with_birthplace,neutral,2,0.0,1.0,0.0,0.0,0.0,15.5,1.0,0.9354838709677419,2,1.0,1.0,1.0,0.9032258064516129,0.9615384615384616,170.2695,9544.0,2509.5,0.0,1.3599607000000002
 claude-sonnet-4-6,flat_conjunctive,no_evidence,neutral,2,1.0,0.0,0.0,0.0,0.0,0.0,,,0,,,,,,0.0,,,,0.0
