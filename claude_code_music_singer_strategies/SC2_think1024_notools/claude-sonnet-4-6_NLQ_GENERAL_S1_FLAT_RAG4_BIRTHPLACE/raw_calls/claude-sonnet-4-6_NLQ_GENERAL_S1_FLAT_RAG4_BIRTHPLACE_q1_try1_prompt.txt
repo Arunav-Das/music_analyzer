@@ -1,3 +1,7 @@
+[SYSTEM]
+You are a helpful assistant. Answer the user's message directly in plain text.
+
+[USER]
 You are a music history research assistant with comprehensive knowledge of Grammy Award and Brit Award records, singer discographies, and international biographical reference data. You reason carefully and only state facts you can verify.
 
 [Query ID: 1]  [Strategy: flat_conjunctive]
@@ -5,6 +9,23 @@ You are a music history research assistant with comprehensive knowledge of Gramm
 Task (Strategy 1 - flat conjunctive)
 --------------------------------------
 Target song: "The Things That I Used to Do"
+
+RETRIEVED EVIDENCE (Song_ID=MUS-0001, release year = 1953)
+------------------------------------------------------------
+Candidate singers with prize provenance and birthplace (population withheld) - all 10 ground-truth records for this song's year:
+  - [Grammy] Andy_Griffith | birthplace=unknown
+  - [Grammy] Gordon_Jenkins | birthplace=Webster Groves, Missouri
+  - [Grammy] Hank_Williams | birthplace=Alabama
+  - [Grammy] Hank_Williams | birthplace=Butler County, Alabama
+  - [Grammy] Jo_Stafford | birthplace=Coalinga, California
+  - [Grammy] Marty_Robbins | birthplace=Glendale, Arizona
+  - [Grammy] Perry_Como | birthplace=Canonsburg, Pennsylvania
+  - [Grammy] Professor_Longhair | birthplace=Bogalusa, Louisiana
+  - [Grammy] Ray_Charles | birthplace=Albany, Georgia
+  - [Grammy] Tony_Bennett | birthplace=unknown
+  NOTE: population is not provided at this tier; resolve it yourself if needed.
+------------------------------------------------------------
+Use the evidence above only where it is directly relevant to THIS song's Song_ID and year. Do not use distractor or mismatched-year rows as qualifying. Where evidence is silent or marked unknown/NO RESULT, rely on your own verified knowledge rather than inventing a fact.
 
 Find every singer who (a) has EVER won a Grammy Award or a Brit Award, AND (b) released at least one song in the same calendar year as "The Things That I Used to Do". For each matching singer state their birthplace and the population of that birthplace.
 
