@@ -517,3 +517,4 @@ MUSIC SINGER ANALYSER - CLAUDE CODE   (script version 2026-11-04.1-music-claude-
 2026-11-05 00:50:25,412 - INFO - No existing results file found. Starting fresh.
 2026-11-05 00:50:25,413 - INFO - Processing 2/2 queries (0 already done)  strategy=flat_conjunctive  rag_tier=full_with_birthplace  model=claude-sonnet-4-6  system_mode=neutral
 2026-11-05 00:50:25,413 - INFO - [1/2] Query_ID=1  'The Things That I Used to Do'
+2026-11-05 00:50:55,648 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG4_BIRTHPLACE_q1] streaming 30s: text=0 chars  thinking=0 chars
