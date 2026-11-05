@@ -129,3 +129,81 @@ MUSIC SINGER ANALYSER - CLAUDE CODE   (script version 2026-11-04.1-music-claude-
 2026-11-05 06:42:04,814 - INFO - Processing 2/2 queries (0 already done)  strategy=flat_conjunctive  rag_tier=titles_authors  model=claude-sonnet-4-6  system_mode=neutral
 2026-11-05 06:42:04,815 - INFO - [1/2] Query_ID=1  'The Things That I Used to Do'
 2026-11-05 06:42:04,815 - WARNING - Song_ID=MUS-0001: no evidence found for tier 'titles_authors'
+2026-11-05 06:42:16,311 - INFO -   OK 11.49s  status=ok  year=1953  singers=10  rag_rows=0/0  complete=False  text_chars=1036  thinking_chars=0  usage={'input_tokens': 3, 'cache_creation_input_tokens': 1437, 'cache_read_input_tokens': 0, 'output_tokens': 316, 'output_tokens_details': {'thinking_tokens': 0}, 'server_tool_use': {'web_search_requests': 0, 'web_fetch_requests': 0}, 'service_tier': 'standard', 'cache_creation': {'ephemeral_1h_input_tokens': 1437, 'ephemeral_5m_input_tokens': 0}, 'inference_geo': 'global', 'iterations': [{'input_tokens': 3, 'output_tokens': 316, 'cache_read_input_tokens': 0, 'cache_creation_input_tokens': 1437, 'cache_creation': {'ephemeral_5m_input_tokens': 0, 'ephemeral_1h_input_tokens': 1437}, 'type': 'message'}], 'speed': 'standard', 'fallback_credit': None}  cost_usd=0.013371
+2026-11-05 06:42:16,312 - INFO - Saved 1 results -> claude_code_music_singer_strategies/SC1_think0_notools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS.json
+2026-11-05 06:42:16,312 - INFO - [2/2] Query_ID=2  'Enchanted (The Platters song)'
+2026-11-05 06:42:26,773 - INFO -   OK 10.46s  status=ok  year=1959  singers=1  rag_rows=3/3  complete=True  text_chars=1175  thinking_chars=0  usage={'input_tokens': 3, 'cache_creation_input_tokens': 1590, 'cache_read_input_tokens': 0, 'output_tokens': 403, 'output_tokens_details': {'thinking_tokens': 0}, 'server_tool_use': {'web_search_requests': 0, 'web_fetch_requests': 0}, 'service_tier': 'standard', 'cache_creation': {'ephemeral_1h_input_tokens': 1590, 'ephemeral_5m_input_tokens': 0}, 'inference_geo': 'global', 'iterations': [{'input_tokens': 3, 'output_tokens': 403, 'cache_read_input_tokens': 0, 'cache_creation_input_tokens': 1590, 'cache_creation': {'ephemeral_5m_input_tokens': 0, 'ephemeral_1h_input_tokens': 1590}, 'type': 'message'}], 'speed': 'standard', 'fallback_credit': None}  cost_usd=0.015594
+2026-11-05 06:42:26,774 - INFO - Saved 2 results -> claude_code_music_singer_strategies/SC1_think0_notools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS.json
+2026-11-05 06:42:26,775 - INFO - Saved 2 results -> claude_code_music_singer_strategies/SC1_think0_notools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS.json
+2026-11-05 06:42:26,775 - INFO - ================================================================================
+2026-11-05 06:42:26,775 - INFO - SUMMARY  model=claude-sonnet-4-6  strategy=flat_conjunctive  rag=titles_authors  new=2  previously_done=0  total=2  errors=0  rag_incomplete=0
+2026-11-05 06:42:26,775 - INFO -   output -> claude_code_music_singer_strategies/SC1_think0_notools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS.json
+2026-11-05 06:42:26,775 - INFO - ================================================================================
+  done: total=2 success=2 errors=0 time=0:00:21.961491  -> claude_code_music_singer_strategies/SC1_think0_notools/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_RAG2_AUTHORS.json
+
+========================================================================
+ALL RUNS COMPLETE
+  Total wall-clock time : 0:00:25.899964
+  Output root           : claude_code_music_singer_strategies/SC1_think0_notools
+========================================================================
+2026-11-05 06:42:27,055 - INFO - GroundTruthStore: 4913/4913 rows loaded from 'dbpedia_gt_music.csv' spanning 50 distinct Song_IDs.
+2026-11-05 06:42:27,087 - WARNING - matplotlib unavailable (No module named 'matplotlib') - plots skipped
+2026-11-05 06:42:27,100 - INFO - Analysis written to claude_code_music_singer_strategies/SC1_think0_notools/analysis (0 plots, report + CSVs)
+====================================================================================================
+MUSIC SINGER ANALYSER (CLAUDE CODE) - ANALYSIS REPORT
+generated 2026-11-05T06:42:27  (script version 2026-11-04.1-music-claude-code)
+====================================================================================================
+
+1. SCOPE
+  records=10  models=1  strategies=1  rag_tiers=5  system modes=['neutral']
+  Backend: `claude -p` in a Claude Code cloud session; temperature / top_p not controllable; tools disabled; raw events per call in <cell dir>/raw_calls.
+  Ground-truth scoring: ON (10 scored records; a song with no GT rows, or with a GT retrieval error, is not scored)
+
+2. HEADLINE (all records pooled)
+  records                   10
+  error_rate                0.0000
+  truncated_rate            0.0000
+  empty_rate                0.0000
+  degenerate_rate           0.0000
+  no_result_rate            0.1000
+  mean_singers              9.5000
+  year_accuracy             1.0000
+  pop_numeric_rate          0.6632
+  gt_scored                 10
+  gt_precision              0.6947
+  gt_recall                 0.4258
+  gt_f1                     0.5280
+
+  Full report: claude_code_music_singer_strategies/SC1_think0_notools/analysis/analysis_report.txt
+################ END SC1_think0_notools | titles_authors | exit=0 | 2026-11-05T06:42:27Z
+################ START SC2_think1024_notools_tok16000_turns40 | no_evidence | 2026-11-05T06:42:27Z
+2026-11-05 06:42:27,497 - INFO - === run started: music_analyzer_inf_mod.py --model claude-sonnet-4-6 --strategy flat_conjunctive --max_rows 2 --timeout 600 --no-resume --reference_file reference_source_music.csv --rag_tier no_evidence --output_root claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40 --max_new_tokens 16000 --max_turns 40 --max_thinking_tokens 1024 (script version 2026-11-04.1-music-claude-code) ===
+========================================================================
+MUSIC SINGER ANALYSER - CLAUDE CODE   (script version 2026-11-04.1-music-claude-code)
+========================================================================
+  Models (1) : claude-sonnet-4-6
+  Input file       : real_songs_50.csv
+  Strategy(ies)    : flat_conjunctive
+  RAG tier         : no_evidence
+  System mode      : neutral
+  Leak policy      : exclude
+  Resume           : OFF (--no-resume)
+  Max new tokens   : 16000 per call; max thinking tokens: 1024; timeout 600s
+  Output root      : claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40   (log: claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40/run.log; raw events: <cell dir>/raw_calls)
+========================================================================
+2026-11-05 06:42:27,497 - INFO - Loading input data from: real_songs_50.csv
+2026-11-05 06:42:27,503 - INFO - Loaded 2 songs.
+
+########################################################################
+  MODEL [1/1] claude-sonnet-4-6
+########################################################################
+2026-11-05 06:42:27,503 - INFO - ClaudeCodeClient ready  alias=claude-sonnet-4-6  model=claude-sonnet-4-6  bin=/opt/node22/bin/claude  max_output_tokens=16000  max_thinking_tokens=1024  system_mode=neutral  tools=''  max_turns=40
+2026-11-05 06:42:27,503 - INFO - Validating Claude Code access  alias=claude-sonnet-4-6  model=claude-sonnet-4-6 ...
+2026-11-05 06:42:31,063 - INFO - Validation OK - response: 'OK'
+
+------------------------------------------------------------------------
+  claude-sonnet-4-6 | strategy: flat_conjunctive (S1_FLAT)
+------------------------------------------------------------------------
+2026-11-05 06:42:31,063 - INFO - No existing results file found. Starting fresh.
+2026-11-05 06:42:31,064 - INFO - Processing 2/2 queries (0 already done)  strategy=flat_conjunctive  rag_tier=no_evidence  model=claude-sonnet-4-6  system_mode=neutral
+2026-11-05 06:42:31,064 - INFO - [1/2] Query_ID=1  'The Things That I Used to Do'

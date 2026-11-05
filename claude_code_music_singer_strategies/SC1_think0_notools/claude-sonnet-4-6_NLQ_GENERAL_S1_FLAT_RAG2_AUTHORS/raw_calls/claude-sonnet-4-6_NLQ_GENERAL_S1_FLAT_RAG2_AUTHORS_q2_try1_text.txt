@@ -1,0 +1,30 @@
+ANSWER:
+Release year: 1959
+
+Bobby Darin | Bronx, New York City, New York, USA | 1,379,946 (Bronx borough population, approx. 2020 census)
+
+Let me reason through this carefully:
+
+**Step 1: Release year of "Enchanted (The Platters song)"**
+The evidence confirms Song_ID=MUS-0002, release year = 1959.
+
+**Step 2: Singers who released a song in 1959 (from evidence)**
+- Bobby Darin ("Dream Lover")
+- Johnny Cash ("Five Feet High and Rising")
+- Wynn Stewart ("Wishful Thinking")
+
+**Step 3: Which of these have EVER won a Grammy or Brit Award?**
+
+- **Bobby Darin**: Yes — won Grammy Awards (Best New Artist 1960, among others). ✓
+- **Johnny Cash**: Yes — won multiple Grammy Awards throughout his career. ✓
+- **Wynn Stewart**: I cannot verify that Wynn Stewart ever won a Grammy or Brit Award. ✗
+
+**Step 4: Birthplaces and populations**
+
+- **Bobby Darin**: Born in the Bronx, New York City, NY, USA. The Bronx population (2020 census) ≈ 1,472,654.
+- **Johnny Cash**: Born in Kingsland, Arkansas, USA. Kingsland, AR population ≈ 468 (2020 census).
+
+ANSWER:
+Release year: 1959
+Bobby Darin | Bronx, New York City, New York, USA | 1,472,654
+Johnny Cash | Kingsland, Arkansas, USA | 468
