@@ -310,3 +310,11 @@ MUSIC SINGER ANALYSER - CLAUDE CODE   (script version 2026-11-04.1-music-claude-
 2026-11-05 07:32:22,624 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 551s: text=0 chars  thinking=0 chars
 2026-11-05 07:32:52,672 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 582s: text=0 chars  thinking=0 chars
 2026-11-05 07:33:11,189 - WARNING - claude exit=-9 attempt 2/3: 'TIMEOUT  ' (raw: claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2_try2_events.jsonl) - retry in 10s
+2026-11-05 07:33:52,308 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 31s: text=0 chars  thinking=0 chars
+2026-11-05 07:34:23,168 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 62s: text=0 chars  thinking=0 chars
+2026-11-05 07:34:54,123 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 93s: text=0 chars  thinking=0 chars
+2026-11-05 07:35:25,271 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 124s: text=0 chars  thinking=0 chars
+2026-11-05 07:35:56,408 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 155s: text=0 chars  thinking=0 chars
+2026-11-05 07:36:26,979 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 186s: text=0 chars  thinking=0 chars
+2026-11-05 07:36:57,300 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 216s: text=0 chars  thinking=0 chars
+2026-11-05 07:37:28,262 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 247s: text=0 chars  thinking=0 chars
