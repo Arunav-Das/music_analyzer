@@ -1,12 +1,12 @@
 You are a music history research assistant with comprehensive knowledge of Grammy Award and Brit Award records, singer discographies, and international biographical reference data. You reason carefully and only state facts you can verify.
 
-[Query ID: 1]  [Strategy: flat_conjunctive]
+[Query ID: 2]  [Strategy: flat_conjunctive]
 
 Task (Strategy 1 - flat conjunctive)
 --------------------------------------
-Target song: "The Things That I Used to Do"
+Target song: "Enchanted (The Platters song)"
 
-Find every singer who (a) has EVER won a Grammy Award or a Brit Award, AND (b) released at least one song in the same calendar year as "The Things That I Used to Do". For each matching singer state their birthplace and the population of that birthplace.
+Find every singer who (a) has EVER won a Grammy Award or a Brit Award, AND (b) released at least one song in the same calendar year as "Enchanted (The Platters song)". For each matching singer state their birthplace and the population of that birthplace.
 
 Note: The award-winning recording and the co-year song are typically different works. Condition (b) does not require an award-winning song - any song released by that singer in that year qualifies.
 Do not invent or estimate any fact.

@@ -265,3 +265,8 @@ MUSIC SINGER ANALYSER - CLAUDE CODE   (script version 2026-11-04.1-music-claude-
 2026-11-05 07:10:59,551 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q1] streaming 493s: text=0 chars  thinking=0 chars
 2026-11-05 07:11:30,693 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q1] streaming 525s: text=0 chars  thinking=0 chars
 2026-11-05 07:12:01,786 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q1] streaming 556s: text=0 chars  thinking=0 chars
+2026-11-05 07:12:32,928 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q1] streaming 587s: text=0 chars  thinking=0 chars
+2026-11-05 07:12:46,124 - WARNING - claude exit=-9 attempt 3/3: 'TIMEOUT  ' (raw: claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q1_try3_events.jsonl) - retry in 20s
+2026-11-05 07:13:06,124 - ERROR - Query_ID=1: claude -p failed after 3 attempts. Last error: TIMEOUT  . Raw logs: claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/raw_calls
+2026-11-05 07:13:06,125 - INFO - Saved 1 results -> claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT.json
+2026-11-05 07:13:06,126 - INFO - [1/2] Query_ID=2  'Enchanted (The Platters song)'
