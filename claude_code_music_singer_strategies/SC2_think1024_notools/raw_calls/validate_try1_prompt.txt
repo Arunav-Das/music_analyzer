@@ -1,0 +1,5 @@
+[SYSTEM]
+You are a helpful assistant. Answer the user's message directly in plain text.
+
+[USER]
+Respond with only the word: OK

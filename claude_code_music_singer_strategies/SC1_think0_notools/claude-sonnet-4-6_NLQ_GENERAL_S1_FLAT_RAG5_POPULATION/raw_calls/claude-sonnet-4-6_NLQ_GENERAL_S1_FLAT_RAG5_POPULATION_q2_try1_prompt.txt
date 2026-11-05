@@ -1,0 +1,71 @@
+[SYSTEM]
+You are a helpful assistant. Answer the user's message directly in plain text.
+
+[USER]
+You are a music history research assistant with comprehensive knowledge of Grammy Award and Brit Award records, singer discographies, and international biographical reference data. You reason carefully and only state facts you can verify.
+
+[Query ID: 2]  [Strategy: flat_conjunctive]
+
+Task (Strategy 1 - flat conjunctive)
+--------------------------------------
+Target song: "Enchanted (The Platters song)"
+
+RETRIEVED EVIDENCE (Song_ID=MUS-0002, release year = 1959)
+------------------------------------------------------------
+Complete evidence including population - all 28 ground-truth records for this song's year:
+  - [Grammy] Barrett_Strong | birthplace=West Point, Mississippi | population=10105
+  - [Grammy] Chubby_Checker | birthplace=Spring Gully, South Carolina | population=unknown
+  - [Grammy] Conway_Twitty | birthplace=Friars Point, Mississippi | population=896
+  - [Grammy] Dinah_Washington | birthplace=Tuscaloosa, Alabama | population=99600
+  - [Grammy] Domenico_Modugno | birthplace=Polignano a Mare | population=17491
+  - [Grammy] Domenico_Modugno | birthplace=Kingdom of Italy | population=unknown
+  - [Grammy] Duane_Eddy | birthplace=Corning, New York | population=10551
+  - [Grammy] Frank_Sinatra | birthplace=Hoboken, New Jersey | population=60419
+  - [Grammy] Ike_Turner | birthplace=Clarksdale, Mississippi | population=14903
+  - [Grammy] James_Brown | birthplace=Barnwell, South Carolina | population=4652
+  - [Grammy] Jerry_Lee_Lewis | birthplace=Ferriday, Louisiana | population=3189
+  - [Grammy] Johnny_Horton | birthplace=Los Angeles | population=3898747
+  - [Grammy] Johnny_Horton | birthplace=California | population=unknown
+  - [Grammy] João_Gilberto | birthplace=Juazeiro | population=218162
+  - [Grammy] João_Gilberto | birthplace=Bahia | population=14141626
+  - [Grammy] Marty_Robbins | birthplace=Glendale, Arizona | population=248325
+  - [Grammy] Miles_Davis | birthplace=Alton, Illinois | population=25676
+  - [Grammy] Otis_Rush | birthplace=Philadelphia, Mississippi | population=7118
+  - [Grammy] Percy_Faith | birthplace=Toronto | population=2794356
+  - [Grammy] Percy_Faith | birthplace=Ontario | population=unknown
+  - [Grammy] Ray_Price_(singer) | birthplace=Wood County, Texas | population=unknown
+  - [Grammy] Ricky_Nelson | birthplace=Teaneck, New Jersey | population=41246
+  - [Grammy] Sarah_Vaughan | birthplace=Newark, New Jersey | population=311549
+  - [Grammy] Steve_Lawrence | birthplace=New York City | population=8804190
+  - [Grammy] Willie_Nelson | birthplace=Abbott, Texas | population=352
+  - [Brit] Cliff_Richard | birthplace=Lucknow | population=4000000
+  - [Brit] Cliff_Richard | birthplace=British Raj | population=unknown
+  - [Brit] Cliff_Richard | birthplace=United Provinces (1937–1950) | population=unknown
+------------------------------------------------------------
+Use the evidence above only where it is directly relevant to THIS song's Song_ID and year. Do not use distractor or mismatched-year rows as qualifying. Where evidence is silent or marked unknown/NO RESULT, rely on your own verified knowledge rather than inventing a fact.
+
+Find every singer who (a) has EVER won a Grammy Award or a Brit Award, AND (b) released at least one song in the same calendar year as "Enchanted (The Platters song)". For each matching singer state their birthplace and the population of that birthplace.
+
+Note: The award-winning recording and the co-year song are typically different works. Condition (b) does not require an award-winning song - any song released by that singer in that year qualifies.
+Do not invent or estimate any fact.
+
+Reasoning approach: Apply all conditions simultaneously in a single pass.
+
+Output format
+-------------
+Start your answer with the line:
+  ANSWER:
+On the very next line write:
+  Release year: [YYYY]
+Then list one line per matching singer in this exact format:
+  [Singer Name] | [Birthplace] | [Population]
+Where:
+  Singer Name    = the singer's full name in English
+  Birthplace     = the city or place of birth in English (write "unknown" if not found)
+  Population     = the population of that place as a number (write "unknown" if not found)
+If no singers match the criteria, write:
+  No matching singers found.
+Do not include any other text after the ANSWER: section.
+Do not invent or estimate facts. Omit any singer you cannot verify.
+
+ANSWER:
