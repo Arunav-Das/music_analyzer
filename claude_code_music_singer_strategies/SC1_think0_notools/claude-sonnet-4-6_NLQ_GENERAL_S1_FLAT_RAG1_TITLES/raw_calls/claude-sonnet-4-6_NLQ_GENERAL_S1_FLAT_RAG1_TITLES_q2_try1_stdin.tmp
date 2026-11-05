@@ -1,0 +1,42 @@
+You are a music history research assistant with comprehensive knowledge of Grammy Award and Brit Award records, singer discographies, and international biographical reference data. You reason carefully and only state facts you can verify.
+
+[Query ID: 2]  [Strategy: flat_conjunctive]
+
+Task (Strategy 1 - flat conjunctive)
+--------------------------------------
+Target song: "Enchanted (The Platters song)"
+
+RETRIEVED EVIDENCE (Song_ID=MUS-0002, release year = 1959)
+------------------------------------------------------------
+Songs released in this year (source: reference index; 3 records):
+  - Dream Lover
+  - Five Feet High and Rising (song)
+  - Wishful Thinking (Wynn Stewart song)
+------------------------------------------------------------
+Use the evidence above only where it is directly relevant to THIS song's Song_ID and year. Do not use distractor or mismatched-year rows as qualifying. Where evidence is silent or marked unknown/NO RESULT, rely on your own verified knowledge rather than inventing a fact.
+
+Find every singer who (a) has EVER won a Grammy Award or a Brit Award, AND (b) released at least one song in the same calendar year as "Enchanted (The Platters song)". For each matching singer state their birthplace and the population of that birthplace.
+
+Note: The award-winning recording and the co-year song are typically different works. Condition (b) does not require an award-winning song - any song released by that singer in that year qualifies.
+Do not invent or estimate any fact.
+
+Reasoning approach: Apply all conditions simultaneously in a single pass.
+
+Output format
+-------------
+Start your answer with the line:
+  ANSWER:
+On the very next line write:
+  Release year: [YYYY]
+Then list one line per matching singer in this exact format:
+  [Singer Name] | [Birthplace] | [Population]
+Where:
+  Singer Name    = the singer's full name in English
+  Birthplace     = the city or place of birth in English (write "unknown" if not found)
+  Population     = the population of that place as a number (write "unknown" if not found)
+If no singers match the criteria, write:
+  No matching singers found.
+Do not include any other text after the ANSWER: section.
+Do not invent or estimate facts. Omit any singer you cannot verify.
+
+ANSWER:
