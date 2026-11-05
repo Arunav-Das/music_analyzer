@@ -1,3 +1,5 @@
 ﻿model_alias,strategy,rag_tier,system_mode,Query_ID,Song_ID,status,is_error,truncated,empty,degenerate,latency,completion_tokens,text_chars,thinking_chars,cost_usd,year_parsed,gt_year,year_ok,n_pred,no_result,pop_numeric_n,pop_total_n,tp,n_gt,scored,birth_ok,birth_n,pop_5_n,pop_cmp_n
 claude-sonnet-4-6,flat_conjunctive,no_evidence,neutral,1,MUS-0001,truncated_length,False,True,False,False,162.921,12000.0,156,0,0.216072,,1953,,0,True,0,0,0,9,True,0,0,0,0
 claude-sonnet-4-6,flat_conjunctive,no_evidence,neutral,2,MUS-0002,truncated_length,False,True,False,False,165.583,12000.0,156,0,0.216216,,1959,,0,True,0,0,0,22,True,0,0,0,0
+claude-sonnet-4-6,flat_conjunctive,full_with_birthplace,neutral,1,MUS-0001,truncated_length,False,True,False,False,165.983,12000.0,156,0,0.223656,,1953,,0,True,0,0,0,9,True,0,0,0,0
+claude-sonnet-4-6,flat_conjunctive,full_with_birthplace,neutral,2,MUS-0002,truncated_length,False,True,False,False,153.305,12000.0,156,0,0.23256000000000002,,1959,,0,True,0,0,0,22,True,0,0,0,0

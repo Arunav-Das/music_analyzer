@@ -8,18 +8,17 @@ Target song: "The Things That I Used to Do"
 
 RETRIEVED EVIDENCE (Song_ID=MUS-0001, release year = 1953)
 ------------------------------------------------------------
-Candidate singers with prize provenance and birthplace (population withheld) - all 10 ground-truth records for this song's year:
-  - [Grammy] Andy_Griffith | birthplace=unknown
-  - [Grammy] Gordon_Jenkins | birthplace=Webster Groves, Missouri
-  - [Grammy] Hank_Williams | birthplace=Alabama
-  - [Grammy] Hank_Williams | birthplace=Butler County, Alabama
-  - [Grammy] Jo_Stafford | birthplace=Coalinga, California
-  - [Grammy] Marty_Robbins | birthplace=Glendale, Arizona
-  - [Grammy] Perry_Como | birthplace=Canonsburg, Pennsylvania
-  - [Grammy] Professor_Longhair | birthplace=Bogalusa, Louisiana
-  - [Grammy] Ray_Charles | birthplace=Albany, Georgia
-  - [Grammy] Tony_Bennett | birthplace=unknown
-  NOTE: population is not provided at this tier; resolve it yourself if needed.
+Complete evidence including population - all 10 ground-truth records for this song's year:
+  - [Grammy] Andy_Griffith | birthplace=unknown | population=unknown
+  - [Grammy] Gordon_Jenkins | birthplace=Webster Groves, Missouri | population=24010
+  - [Grammy] Hank_Williams | birthplace=Alabama | population=unknown
+  - [Grammy] Hank_Williams | birthplace=Butler County, Alabama | population=unknown
+  - [Grammy] Jo_Stafford | birthplace=Coalinga, California | population=17590
+  - [Grammy] Marty_Robbins | birthplace=Glendale, Arizona | population=248325
+  - [Grammy] Perry_Como | birthplace=Canonsburg, Pennsylvania | population=9744
+  - [Grammy] Professor_Longhair | birthplace=Bogalusa, Louisiana | population=10659
+  - [Grammy] Ray_Charles | birthplace=Albany, Georgia | population=68089
+  - [Grammy] Tony_Bennett | birthplace=unknown | population=unknown
 ------------------------------------------------------------
 Use the evidence above only where it is directly relevant to THIS song's Song_ID and year. Do not use distractor or mismatched-year rows as qualifying. Where evidence is silent or marked unknown/NO RESULT, rely on your own verified knowledge rather than inventing a fact.
 
