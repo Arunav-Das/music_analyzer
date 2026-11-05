@@ -1,0 +1,36 @@
+===== Query_ID 1 | The Things That I Used to Do =====
+ANSWER:
+Release year: 1953
+
+"The Things That I Used to Do" was recorded by Guitar Slim and released in 1953. I need to identify singers who (a) have won a Grammy Award or Brit Award, AND (b) released at least one song in 1953.
+
+The Grammy Awards were first held in 1959, and the Brit Awards began in 1977. Many artists who were active in 1953 later won Grammys or were honored with Grammy Lifetime Achievement Awards or similar. I will only list singers I can verify on both conditions.
+
+Frank Sinatra | Hoboken, New Jersey, USA | 60,000
+Nat King Cole | Montgomery, Alabama, USA | 199,518
+Tony Bennett | Astoria, Queens, New York City, USA | 2,000,000
+Hank Williams | Georgiana, Alabama, USA | 1,756
+Perry Como | Canonsburg, Pennsylvania, USA | 8,992
+Dinah Washington | Tuscumbia, Alabama, USA | 8,423
+Patti Page | Claremore, Oklahoma, USA | 18,000
+Rosemary Clooney | Maysville, Kentucky, USA | 9,000
+Louis Armstrong | New Orleans, Louisiana, USA | 383,997
+Ella Fitzgerald | Newport News, Virginia, USA | 185,000
+Doris Day | Cincinnati, Ohio, USA | 296,943
+Dean Martin | Steubenville, Ohio, USA | 18,116
+Sammy Davis Jr. | New York City, New York, USA | 8,336,817
+Eddie Fisher | Philadelphia, Pennsylvania, USA | 1,567,872
+Jo Stafford | Coalinga, California, USA | 13,380
+Kay Starr | Dougherty, Oklahoma, USA | 163
+Teresa Brewer | Toledo, Ohio, USA | 274,975
+Frankie Laine | Chicago, Illinois, USA | 2,696,555
+Billy Eckstine | Pittsburgh, Pennsylvania, USA | 302,971
+Johnny Ray | Dallas, Oregon, USA | unknown
+
+No matching singers found.
+
+===== Query_ID 2 | Enchanted (The Platters song) =====
+ANSWER:
+Release year: 1959
+
+No matching singers found.

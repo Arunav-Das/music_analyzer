@@ -1266,7 +1266,7 @@ def _completion_tokens(usage: Any) -> float:
 class ClaudeCodeClient:
     def __init__(self, model_alias: str = DEFAULT_MODEL_ALIAS, max_new_tokens: int = GENERATION_MAX_NEW_TOKENS,
                  system_mode: str = "neutral", claude_bin: str = "claude", timeout: int = REQUEST_TIMEOUT,
-                 max_thinking_tokens: Optional[int] = None):
+                 max_thinking_tokens: Optional[int] = None, tools: str = "", max_turns: int = 1):
         if model_alias not in MODEL_REGISTRY:
             raise ValueError(f"Unknown model alias '{model_alias}'")
         found = shutil.which(claude_bin)
@@ -1276,6 +1276,7 @@ class ClaudeCodeClient:
         self.model_alias, self.model_id, self.family = model_alias, MODEL_REGISTRY[model_alias], FAMILY
         self.visible_tokens = self.max_tokens = int(max_new_tokens)
         self.max_thinking_tokens = max_thinking_tokens
+        self.tools, self.max_turns = tools, int(max_turns)
         self.system_mode_requested = system_mode
         self.system_text: Optional[str] = NEUTRAL_SYSTEM if system_mode == "neutral" else None
         self.system_native = True            # False -> the system text is prepended to the user turn instead
@@ -1286,7 +1287,7 @@ class ClaudeCodeClient:
         atexit.register(shutil.rmtree, self.workdir, True)
         logger.info(f"ClaudeCodeClient ready  alias={model_alias}  model={self.model_id}  bin={self.bin}  "
                     f"max_output_tokens={self.max_tokens}  max_thinking_tokens={max_thinking_tokens}  "
-                    f"system_mode={system_mode}")
+                    f"system_mode={system_mode}  tools={tools!r}  max_turns={max_turns}")
 
     @property
     def system_mode(self) -> str:
@@ -1376,7 +1377,9 @@ class ClaudeCodeClient:
             native = bool(sysmsg and self.system_native)
             user_text = (sysmsg + "\n\n" + prompt) if (sysmsg and not self.system_native) else prompt
             cmd = [self.bin, "-p", "--model", self.model_id, "--output-format", "stream-json", "--verbose",
-                   "--include-partial-messages", "--tools", "", "--max-turns", "1"]
+                   "--include-partial-messages", "--tools", self.tools, "--max-turns", str(self.max_turns)]
+            if self.tools:
+                cmd += ["--allowedTools", self.tools]
             if native:
                 cmd += ["--system-prompt", sysmsg]
             env = dict(os.environ, CLAUDE_CODE_MAX_OUTPUT_TOKENS=str(mt))
@@ -1575,6 +1578,7 @@ class MusicSingerAnalyser:
                 "timestamp": datetime.now().isoformat(), "total_queries": len(results),
                 "successful_records": len(results) - errors, "error_records": errors,
                 "max_output_tokens_requested": c.max_tokens, "max_thinking_tokens_env": c.max_thinking_tokens,
+                "tools": c.tools, "max_turns": c.max_turns,
                 "params_adapted": c.dropped, "request_timeout_s": c.timeout,
                 "system_mode_requested": c.system_mode_requested, "system_mode": c.system_mode,
                 "system_text": c.system_text,
@@ -2012,7 +2016,7 @@ def run_analysis(root: Path = OUTPUT_ROOT) -> None:
 # CLI
 # ---------------------------------------------------------------------------
 def main() -> int:
-    global INPUT_FILE, REFERENCE_FILE, GROUND_TRUTH_FILE
+    global INPUT_FILE, REFERENCE_FILE, GROUND_TRUTH_FILE, OUTPUT_ROOT
     p = argparse.ArgumentParser(
         description=(f"Music Singer Analyser - Claude Code edition (script version {SCRIPT_VERSION})\n"
                      "Claude models only; every call is a streamed headless `claude -p` run inside a Claude Code cloud session.\n"
@@ -2029,6 +2033,9 @@ def main() -> int:
     p.add_argument("--timeout", type=int, default=REQUEST_TIMEOUT, help="seconds allowed per `claude -p` call")
     p.add_argument("--max_thinking_tokens", type=int, default=None,
                    help="sets MAX_THINKING_TOKENS for the call (0 = try to disable thinking); default: untouched")
+    p.add_argument("--tools", default="", help="comma-separated Claude Code tools for --tools/--allowedTools (default '' = no tools)")
+    p.add_argument("--max_turns", type=int, default=1, help="--max-turns for each call (raise when tools are enabled)")
+    p.add_argument("--output_root", default=str(OUTPUT_ROOT), help="output root directory")
     p.add_argument("--system_mode", choices=["neutral", "default"], default="neutral",
                    help="neutral: a short neutral --system-prompt (default); default: no flag, Claude Code's own system prompt")
     p.add_argument("--no-resume", dest="no_resume", action="store_true", default=False)
@@ -2045,6 +2052,7 @@ def main() -> int:
     p.add_argument("--no_analysis", action="store_true", default=False)
     args = p.parse_args()
     INPUT_FILE, REFERENCE_FILE, GROUND_TRUTH_FILE = args.input_file, args.reference_file, args.ground_truth_file
+    OUTPUT_ROOT = Path(args.output_root)
 
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)                 # full log of every run, next to the results
     fh = logging.FileHandler(OUTPUT_ROOT / "run.log", encoding="utf-8")
@@ -2122,7 +2130,8 @@ def main() -> int:
         try:
             client = ClaudeCodeClient(model_alias=alias, max_new_tokens=args.max_new_tokens, system_mode=args.system_mode,
                                       claude_bin=args.claude_bin, timeout=args.timeout,
-                                      max_thinking_tokens=args.max_thinking_tokens)
+                                      max_thinking_tokens=args.max_thinking_tokens,
+                                      tools=args.tools, max_turns=args.max_turns)
             client.raw_dir = OUTPUT_ROOT / "raw_calls"
             client.validate_access()
         except Exception as e:
