@@ -271,3 +271,22 @@ MUSIC SINGER ANALYSER - CLAUDE CODE   (script version 2026-11-04.1-music-claude-
 2026-11-05 07:13:06,125 - INFO - Saved 1 results -> claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT.json
 2026-11-05 07:13:06,126 - INFO - [1/2] Query_ID=2  'Enchanted (The Platters song)'
 2026-11-05 07:13:36,160 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 30s: text=0 chars  thinking=0 chars
+2026-11-05 07:14:06,204 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 60s: text=0 chars  thinking=0 chars
+2026-11-05 07:14:36,348 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 90s: text=0 chars  thinking=0 chars
+2026-11-05 07:15:07,062 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 121s: text=0 chars  thinking=0 chars
+2026-11-05 07:15:37,967 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 152s: text=0 chars  thinking=0 chars
+2026-11-05 07:16:08,064 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 182s: text=0 chars  thinking=0 chars
+2026-11-05 07:16:38,483 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 212s: text=0 chars  thinking=0 chars
+2026-11-05 07:17:09,775 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 244s: text=0 chars  thinking=0 chars
+2026-11-05 07:17:39,973 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 274s: text=0 chars  thinking=0 chars
+2026-11-05 07:18:10,353 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 304s: text=0 chars  thinking=0 chars
+2026-11-05 07:18:41,352 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 335s: text=0 chars  thinking=0 chars
+2026-11-05 07:19:11,640 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 366s: text=0 chars  thinking=0 chars
+2026-11-05 07:19:42,353 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 396s: text=0 chars  thinking=0 chars
+2026-11-05 07:20:12,914 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 427s: text=0 chars  thinking=0 chars
+2026-11-05 07:20:43,395 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 457s: text=0 chars  thinking=0 chars
+2026-11-05 07:21:14,305 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 488s: text=0 chars  thinking=0 chars
+2026-11-05 07:21:45,262 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 519s: text=0 chars  thinking=0 chars
+2026-11-05 07:22:15,404 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 549s: text=0 chars  thinking=0 chars
+2026-11-05 07:22:45,786 - INFO -   [claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2] streaming 580s: text=0 chars  thinking=0 chars
+2026-11-05 07:23:06,163 - WARNING - claude exit=-9 attempt 1/3: 'TIMEOUT  ' (raw: claude_code_music_singer_strategies/SC2_think1024_notools_tok16000_turns40/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT/raw_calls/claude-sonnet-4-6_NLQ_GENERAL_S1_FLAT_q2_try1_events.jsonl) - retry in 5s
