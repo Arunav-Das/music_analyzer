@@ -1,2 +1,2 @@
 ﻿strategy,records,error_rate,truncated_rate,empty_rate,degenerate_rate,no_result_rate,mean_singers,year_accuracy,pop_numeric_rate,gt_scored,gt_precision,gt_recall,gt_f1,gt_birthplace_acc,gt_pop_within_5pct,mean_latency_s,mean_completion_tokens,mean_text_chars,mean_thinking_chars,total_cost_usd
-flat_conjunctive,4,0.0,1.0,0.0,0.0,1.0,0.0,,,4,,0.0,,,,161.948,12000.0,156.0,0.0,0.888504
+flat_conjunctive,6,0.0,0.8333333333333334,0.0,0.0,0.8333333333333334,3.6666666666666665,1.0,0.9090909090909091,6,1.0,0.23655913978494625,0.3826086956521739,1.0,1.0,142.275,10455.833333333334,289.6666666666667,0.0,1.16715

@@ -1,59 +1,62 @@
 ====================================================================================================
 MUSIC SINGER ANALYSER (CLAUDE CODE) - ANALYSIS REPORT
-generated 2026-11-05T00:55:45  (script version 2026-11-04.1-music-claude-code)
+generated 2026-11-05T00:59:15  (script version 2026-11-04.1-music-claude-code)
 ====================================================================================================
 
 1. SCOPE
-  records=4  models=1  strategies=1  rag_tiers=2  system modes=['neutral']
+  records=6  models=1  strategies=1  rag_tiers=3  system modes=['neutral']
   Backend: `claude -p` in a Claude Code cloud session; temperature / top_p not controllable; tools disabled; raw events per call in <cell dir>/raw_calls.
-  Ground-truth scoring: ON (4 scored records; a song with no GT rows, or with a GT retrieval error, is not scored)
+  Ground-truth scoring: ON (6 scored records; a song with no GT rows, or with a GT retrieval error, is not scored)
 
 2. HEADLINE (all records pooled)
-  records                   4
+  records                   6
   error_rate                0.0000
-  truncated_rate            1.0000
+  truncated_rate            0.8333
   empty_rate                0.0000
   degenerate_rate           0.0000
-  no_result_rate            1.0000
-  mean_singers              0.0000
-  year_accuracy             nan
-  pop_numeric_rate          nan
-  gt_scored                 4
-  gt_precision              nan
-  gt_recall                 0.0000
-  gt_f1                     nan
-  gt_birthplace_acc         nan
-  gt_pop_within_5pct        nan
-  mean_latency_s            161.9480
-  mean_completion_tokens    12000.0000
-  mean_text_chars           156.0000
+  no_result_rate            0.8333
+  mean_singers              3.6667
+  year_accuracy             1.0000
+  pop_numeric_rate          0.9091
+  gt_scored                 6
+  gt_precision              1.0000
+  gt_recall                 0.2366
+  gt_f1                     0.3826
+  gt_birthplace_acc         1.0000
+  gt_pop_within_5pct        1.0000
+  mean_latency_s            142.2750
+  mean_completion_tokens    10455.8333
+  mean_text_chars           289.6667
   mean_thinking_chars       0.0000
-  total_cost_usd            0.8885
+  total_cost_usd            1.1671
 
 3. BY MODEL
       model_alias  records  error_rate  truncated_rate  empty_rate  degenerate_rate  no_result_rate  mean_singers  year_accuracy  pop_numeric_rate  gt_scored  gt_precision  gt_recall  gt_f1  gt_birthplace_acc  gt_pop_within_5pct  mean_latency_s  mean_completion_tokens  mean_text_chars  mean_thinking_chars  total_cost_usd
-claude-sonnet-4-6        4       0.000           1.000       0.000            0.000           1.000         0.000            NaN               NaN          4           NaN      0.000    NaN                NaN                 NaN         161.948               12000.000          156.000                0.000           0.889
+claude-sonnet-4-6        6       0.000           0.833       0.000            0.000           0.833         3.667          1.000             0.909          6         1.000      0.237  0.383              1.000               1.000         142.275               10455.833          289.667                0.000           1.167
 
 4. BY STRATEGY
         strategy  records  error_rate  truncated_rate  empty_rate  degenerate_rate  no_result_rate  mean_singers  year_accuracy  pop_numeric_rate  gt_scored  gt_precision  gt_recall  gt_f1  gt_birthplace_acc  gt_pop_within_5pct  mean_latency_s  mean_completion_tokens  mean_text_chars  mean_thinking_chars  total_cost_usd code
-flat_conjunctive        4       0.000           1.000       0.000            0.000           1.000         0.000            NaN               NaN          4           NaN      0.000    NaN                NaN                 NaN         161.948               12000.000          156.000                0.000           0.889   S1
+flat_conjunctive        6       0.000           0.833       0.000            0.000           0.833         3.667          1.000             0.909          6         1.000      0.237  0.383              1.000               1.000         142.275               10455.833          289.667                0.000           1.167   S1
 
 5. BY RAG TIER
             rag_tier  records  error_rate  truncated_rate  empty_rate  degenerate_rate  no_result_rate  mean_singers  year_accuracy  pop_numeric_rate  gt_scored  gt_precision  gt_recall  gt_f1  gt_birthplace_acc  gt_pop_within_5pct  mean_latency_s  mean_completion_tokens  mean_text_chars  mean_thinking_chars  total_cost_usd
 full_with_birthplace        2       0.000           1.000       0.000            0.000           1.000         0.000            NaN               NaN          2           NaN      0.000    NaN                NaN                 NaN         159.644               12000.000          156.000                0.000           0.456
+full_with_population        2       0.000           0.500       0.000            0.000           0.500        11.000          1.000             0.909          2         1.000      0.710  0.830              1.000               1.000         102.929                7367.500          557.000                0.000           0.279
          no_evidence        2       0.000           1.000       0.000            0.000           1.000         0.000            NaN               NaN          2           NaN      0.000    NaN                NaN                 NaN         164.252               12000.000          156.000                0.000           0.432
 
 6. GENERATION HEALTH
       model_alias system_mode           status  count
-claude-sonnet-4-6     neutral truncated_length      4
+claude-sonnet-4-6     neutral               ok      1
+claude-sonnet-4-6     neutral truncated_length      5
 
 7. GROUND-TRUTH DETAIL
-  Most missed singers: Marty_Robbins: 4; Andy_Griffith: 2; Gordon_Jenkins: 2; Hank_Williams: 2; Jo_Stafford: 2; Perry_Como: 2; Professor_Longhair: 2; Ray_Charles: 2; Tony_Bennett: 2; Barrett_Strong: 2; Chubby_Checker: 2; Conway_Twitty: 2; Dinah_Washington: 2; Domenico_Modugno: 2; Duane_Eddy: 2
+  Most missed singers: Marty_Robbins: 5; Andy_Griffith: 3; Gordon_Jenkins: 3; Hank_Williams: 3; Jo_Stafford: 3; Perry_Como: 3; Professor_Longhair: 3; Ray_Charles: 3; Tony_Bennett: 3; Barrett_Strong: 2; Chubby_Checker: 2; Conway_Twitty: 2; Dinah_Washington: 2; Domenico_Modugno: 2; Duane_Eddy: 2
   Most frequent false positives: none
 
 8. KEY INSIGHTS
-  - 100.0% of calls hit the output-token cap (claude-sonnet-4-6 100%). Compare text_chars with thinking_chars to see what used the budget; raise --max_new_tokens or set --max_thinking_tokens.
-  - Reported cost summed over all records (Claude Code 'total_cost_usd'): 0.89 USD.
+  - 83.3% of calls hit the output-token cap (claude-sonnet-4-6 83%). Compare text_chars with thinking_chars to see what used the budget; raise --max_new_tokens or set --max_thinking_tokens.
+  - Release-year accuracy against the GT year: 100.0% (over records where both years are known).
+  - Reported cost summed over all records (Claude Code 'total_cost_usd'): 1.17 USD.
 
 9. LIMITATIONS
   - One call per (model, strategy, RAG tier, song): small differences may be sampling noise (no replicates).
